@@ -2,7 +2,13 @@
 
 <p>Word so far: <%= @tally.letters |> Enum.join(" ") %></p>
 
-<%= form_for(@conn, Routes.hangman_path(@conn, :make_move), [as: :make_move, method: :put], fn(f) -> %>
-  <%= text_input(f, :guess) %>
-  <%= submit("Guess") %>
-<% end) %>
+<p><%= game_state(@tally.game_state) %></p>
+
+<%= if game_over?(@tally) do %>
+  <%= new_game_button(@conn) %>
+<% else %>
+  <%= form_for(@conn, Routes.hangman_path(@conn, :make_move), [as: :make_move, method: :put], fn(f) -> %>
+    <%= text_input(f, :guess) %>
+    <%= submit("Guess") %>
+  <% end) %>
+<% end %>
