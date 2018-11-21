@@ -15,7 +15,7 @@ defmodule GallowsWeb.HangmanView do
     "opacity: 1"
   end
 
-  def turn(left, target) do
+  def turn(_left, _target) do
     "opacity: 0.1"
   end
 end
