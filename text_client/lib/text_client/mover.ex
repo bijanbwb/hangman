@@ -4,6 +4,6 @@ defmodule TextClient.Mover do
   def make_move(game) do
     tally = Hangman.make_move(game.game_service, game.guess)
 
-    %State{ game | tally: tally }
+    %State{game | tally: tally}
   end
 end
