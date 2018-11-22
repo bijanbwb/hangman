@@ -2,7 +2,7 @@
 
 ## Quickstart
 
-```
+```shell
 # Change directory to Phoenix application
 cd gallows
 
@@ -29,5 +29,5 @@ cd .. && mix phx.server
 - **socket_gallows**: (partially implemented) Phoenix application to play the
   Hangman game using WebSockets instead of the HTTP `gallows` version`.
 - **text_client**: Text client for the hangman game that prompts for guesses
-  and prints a summary.
-
+  and prints a summary (run `mix run -e TextClient.start` from `text_client`
+  folder).
